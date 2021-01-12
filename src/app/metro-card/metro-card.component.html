@@ -3,12 +3,12 @@
     <ul> 
         <li *ngFor="let card of metroCards"> 
             {{card.owner}}'s card 
+            <!-- using NgClass -->
             <!-- <span [ngClass]="{ red: card.balance <= 0 }"> has a balance 
                 of {{ card.balance | currency }}.
             </span>   -->
-            <span [ngStyle]="{ 'text-decoration': card.balance < 0 ? 'line-through': 'none', 'font-weight': card.owner === 'Sputnik' ? 'bold' : 'normal', 'color': card.balance > 5 ? 'purple': 'red'}">has a balance of {{card.balance}} </span>
+            <span [ngStyle]="{ 'text-decoration': card.balance < 0 ? 'line-through': 'none', 'font-weight': card.owner === 'Sputnik' ? 'bold' : 'normal', 'color': card.balance > 5 ? 'purple': 'red'}">has a balance of {{card.balance | currency}} </span>
 
-            <!-- todo: add a warning class w/ yellow background color to warn them if balance is under $5 and give option to reload card -->
             <button *ngIf="card.balance<=0" (click)="reloadCard(card)"> Reload Card</button>
         </li>
     </ul>
