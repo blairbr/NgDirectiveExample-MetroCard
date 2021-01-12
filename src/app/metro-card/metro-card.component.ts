@@ -35,12 +35,6 @@ export class MetroCardComponent implements OnInit {
   reloadCard(card: MetroCard) {
     console.log("let's add some $$ to your card!");
   }
-
-  stylesList: object = {
-    'font-style':  card.balance      ? 'italic' : 'normal',
-    'font-weight': !this.isUnchanged ? 'bold'   : 'normal',
-    'font-size':   this.isSpecial    ? '24px'   : '12px'
-  }
   
 
 }
